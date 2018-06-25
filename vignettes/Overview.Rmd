@@ -29,6 +29,7 @@ There are three exported functions available to users:
 
 Function reads in data from a csv file. It takes in a character string of a path of a filename to read into R.
 
+Usage Example:
 ```{r fars_read_example}
 filename <- system.file("extdata/accident_2013.csv.bz2", package = "fars")
 fars_read(filename)
@@ -38,6 +39,7 @@ fars_read(filename)
 
 Function combines all the dataframes obtained from the `fars_read_years()` function into one single dataframe, groups the data into each specific 'year' and 'month', summarises by counting the number of data points for each group, transforms and returns the table from the long to wide format according to the 'year' and number of counts for each group variables.
 
+Usage Example:
 ```{r fars_summarize_years_example}
 setwd(system.file("extdata", package = "fars"))
 fars_summarize_years(2013:2015)
@@ -47,6 +49,7 @@ fars_summarize_years(2013:2015)
 
 Function takes in two numbers specifying a specific state and year and plots the location of accidents according to latitude and longtitude on a state map.
 
+Usage Example:
 ```{r fars_map_state_example}
 setwd(system.file("extdata", package = "fars"))
 fars_map_state(45, 2015)
